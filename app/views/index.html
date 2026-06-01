@@ -2,61 +2,90 @@
 
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
-<!-- Extends the layout from /app/views/layout.html -->
+<!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
-<!--
-  In /app/views/layout.html you can:
-    - change the header and footer
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
     - add custom CSS and JavaScript
 -->
 
-<!--
-  Use this to set the page name which will appear at the
-  start of the <title> tag, followed by the service name.
-  This is often not needed on the homepage, where only the
-  service name is needed. You can also reuse this variable
-  within the <h1>, where they are the same.
--->
-{% set pageName = "" %}
+<!-- Set the page title -->
+{% block pageTitle %}
+  NHS.UK prototype for designers
+{% endblock %}
 
-<!-- For adding a breadcrumb or back link -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs and https://service-manual.nhs.uk/design-system/components/back-link -->
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
 {% endblock %}
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
+<br><br>
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page title here -->
+      <h1>
+        NHS.UK GPs sideways navigation
+       <!-- <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version {{version}}</span>-->
+      </h1>
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
-      <h1 class="nhsuk-heading-xl">
-        {{ serviceName }}
-      </h1>
-
-      <p>Set the service name for your prototype by editing <strong>/app/config.js</strong>.</p>
-
-      <p>
-        This is the index page for your prototype. You can find it at <strong>/app/views/index.html</strong>.
+      <p class="nhsuk-lede-text">
+        Sideways navigation design options for AB testing 
       </p>
+
+
+      <hr>    
+
+      <ul>
+        <li><a href="gp-appointments-and-bookings-variant-a">Variant A - control</a></li>
+        <li><a href="gp-appointments-and-bookings-variant-b_v1">Variant B - Improved styling </a></li>
+        <li><a href="gp-appointments-and-bookings-variant-c">Variant C - Improved styling with no current page </a></li>
+        <li><a href="gp-appointments-and-bookings-variant-d">Variant D - No sideways nav </a></li>
+        <li><a href="gp-appointments-and-bookings-variant-e">Variant E - Simplified back to topic link </a></li>        
+      </ul>
 
       <hr>
 
-      <h2 class="nhsuk-heading-l">
-        Get started
-      </h2>
+<br><br>
 
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>
-          <a href="https://prototype-kit.service-manual.nhs.uk/how-tos">NHS prototype kit guides</a> – including a tutorial
-        </li>
-        <li>
-          <a href="https://service-manual.nhs.uk/design-system">NHS digital service manual</a> – for code snippets and guidance on using NHS styles, components and patterns
-        </li>
-      </ul>
+
+        <!-- 
+        <h3>Search</h3>
+        <ul>
+          <li><a href="search/no-results-found">Search - no results</a></li>
+          <li><a href="search/results-hospital">Search results for hospital</a></li>
+        </ul>
+
+        <p>Get started by using the:</p>
+
+        <ul>
+          <li>
+            <a href="/docs/how-tos">how to guides</a>
+          </li>
+          <li>
+            <a href="/docs/page-templates">page templates</a>
+          </li>
+          <li>
+            code snippets for styles and components from the <a href="https://service-manual.nhs.uk/design-system">NHS digital service manual</a>
+          </li>
+
+        </ul>
+      -->   
+
+
+      <!-- End of content -->
 
     </div>
   </div>
